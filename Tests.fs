@@ -51,4 +51,8 @@ let tests =
     testCase "Negative numbers" <| fun _ ->
       let actual = StringCalc("-1,2\n3")
       Expect.equal actual -1002 "Negative numbers test fail"    
+
+    testCase "Numbers bigger than 1000" <| fun _ ->
+      let actual = StringCalc("1001, 2")
+      Expect.equal actual 2 "Numbers bigger than 1000 test fail"
   ]

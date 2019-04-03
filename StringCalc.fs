@@ -15,7 +15,7 @@ let add numbers : int =
             let intNumbersList = List.map ((fun num -> num.ToString() |> Convert.ToInt16) >> (int)) numbers
             match List.filter(fun num -> num < 0 ) intNumbersList with
             | [] -> 
-                List.sum(intNumbersList)
+                List.sum (List.filter(fun num -> num <= 1000) intNumbersList)
             | negativeNumbersList -> 
                 raise(NegativeNumbersException("negatives not allowed", negativeNumbersList))
         | _ -> raise(InvalidExpressionException("Invalid Expression")) 
