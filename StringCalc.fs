@@ -33,7 +33,7 @@ let StringCalc (expression : string) =
     | _ ->
         match expression.StartsWith "//" with
         | true -> 
-            let delimiters = expression.Substring(2, expression.IndexOf('\n') - 2).ToCharArray()
+            let delimiters = expression.Substring(2, expression.IndexOf('\n') - 2).Split([|"[";"]"|], System.StringSplitOptions.RemoveEmptyEntries)
             let numbers = expression.Substring(expression.IndexOf('\n') + 1)
             add(numbers.Split(delimiters, System.StringSplitOptions.None) |> Seq.toList)
         | false -> 

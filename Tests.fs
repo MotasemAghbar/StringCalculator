@@ -55,4 +55,8 @@ let tests =
     testCase "Numbers bigger than 1000" <| fun _ ->
       let actual = StringCalc("1001, 2")
       Expect.equal actual 2 "Numbers bigger than 1000 test fail"
+
+    testCase "Multi char delimiters" <| fun _ ->
+      let actual = StringCalc("//[***]\n1***2***3")
+      Expect.equal actual 6 "Multi char delimiters test fail"   
   ]
