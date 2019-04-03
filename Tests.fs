@@ -30,4 +30,8 @@ let tests =
     testCase "Add two numbers" <| fun _ ->
       let actual = StringCalc("1,2")
       Expect.equal actual 3 "Add two Numbers test fail"
+
+    testCase "Unkown numbers test" <| fun _ ->
+      let actual = StringCalc("1,2,5,50")
+      Expect.equal actual 58 "Unkown numbers test test fail"
   ]
