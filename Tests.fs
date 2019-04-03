@@ -34,4 +34,8 @@ let tests =
     testCase "Unkown numbers test" <| fun _ ->
       let actual = StringCalc("1,2,5,50")
       Expect.equal actual 58 "Unkown numbers test test fail"
+
+    testCase "Add multi numbers with new line delimiter" <| fun _ ->
+      let actual = StringCalc("1\n2,5,7")
+      Expect.equal actual 15 "add multi numbers with new line delimiter test fail"
   ]

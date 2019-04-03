@@ -10,7 +10,7 @@ let StringCalc (expression : string) =
     | 0 -> 0
     | _ ->
         try
-            let numbers =  expression.Split(',') |> Seq.toList
+            let numbers =  expression.Split([|",";"\n"|], System.StringSplitOptions.None) |> Seq.toList
             match List.filter (fun num -> Int16.TryParse num = (false, 0s)) numbers with
             | [] ->  
                 int(List.sumBy(fun num -> num.ToString() |> Convert.ToInt16) numbers)
