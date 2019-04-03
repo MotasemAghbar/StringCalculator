@@ -59,4 +59,9 @@ let tests =
     testCase "Multi char delimiters" <| fun _ ->
       let actual = StringCalc("//[***]\n1***2***3")
       Expect.equal actual 6 "Multi char delimiters test fail"   
+
+
+    testCase "Multi delimiters" <| fun _ ->
+      let actual = StringCalc("//[*][%]\n1*2%3")
+      Expect.equal actual 6 "Multi delimiters test fail"   
   ]
