@@ -38,4 +38,9 @@ let tests =
     testCase "Add multi numbers with new line delimiter" <| fun _ ->
       let actual = StringCalc("1\n2,5,7")
       Expect.equal actual 15 "add multi numbers with new line delimiter test fail"
+
+
+    testCase "Add multi numbers with custom delimiters" <| fun _ ->
+      let actual = StringCalc("//;\n1;2;7")
+      Expect.equal actual 10 "Add Multi numbers With new line delimiter test fail"
   ]
